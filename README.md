@@ -1,3 +1,25 @@
+# Get it to run:
+
+## Installation
+
+Install Node: https://nodejs.org/en/download/
+
+```
+npm install
+npm install -g jspm
+jspm install
+npm install -g live-server
+```
+
+## Develop
+
+```
+cd src
+live-server
+```
+
+-----------------------------------------------------------------------------------------------------------
+
 # Angular Material-Start (ES6 Tutorials)
 
 This branch contains the same tutorial application created in master and the es5 branch... but this branch implements the application using JSPM and ES6. 
