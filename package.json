@@ -35,5 +35,8 @@
   },
   "scripts": {
     "prestart": "npm update"
+  },
+  "dependencies": {
+    "jspm": "^0.16.15"
   }
 }
