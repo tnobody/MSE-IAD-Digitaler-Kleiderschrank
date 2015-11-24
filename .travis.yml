@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "0.10"
+  - "5.0.0"
 
 before_script:
   - export DISPLAY=:99.0
@@ -9,6 +9,15 @@ before_script:
   - npm run update-webdriver
   - sleep 1 # give server time to start
 
-script:
-  - node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
-  - node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
+install:
+  - npm install
+  - jspm install
+
+#script:
+  #- node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
+  #- node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
+
+deploy:
+  provider: heruko
+  api_key: 8abd117b-a0b2-4887-8320-fc101d69153a
+  app: digitaler-kleiderschrank
