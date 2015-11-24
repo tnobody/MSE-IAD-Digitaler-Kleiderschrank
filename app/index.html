@@ -16,20 +16,27 @@
         [ng-cloak] {
             display: none;
         }
+
+        header a {
+            text-decoration: none;
+        }
     </style>
 </head>
 
-<body ng-cloak layout="column">
+<body ng-cloak layout="row">
 
-
-<div layout="column">
-    <header layout="row">
-        <h1>
-            <a ui-sref="home">Digitaler Kleiderschrank</a>
-        </h1>
+<div layout="column" flex-offset="25" flex-offset-md="33" flex-offset-sm="0" flex-md="66" flex="50" flex-sm="100">
+    <header>
+        <a ui-sref="home">
+            <h1 class="md-display-3">
+                Digitaler Kleiderschrank
+            </h1>
+        </a>
     </header>
-    <nav layout="row">Navigation</nav>
-    <main ui-view layout="row"></main>
+    <nav>
+        <md-button class="md-raised md-primary">Outfit vorschlagen</md-button>
+    </nav>
+    <main ui-view></main>
 </div>
 
 <script src="./jspm_packages/system.js" type="text/javascript"></script>

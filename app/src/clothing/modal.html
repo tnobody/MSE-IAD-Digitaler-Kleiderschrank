@@ -1,0 +1,52 @@
+<md-dialog aria-label="Mango (Fruit)" ng-cloak>
+    <form>
+        <md-dialog-content style="max-width:800px;max-height:810px; ">
+            <div class="md-dialog-content" layout="column">
+                <md-input-container flex>
+                    <label>Title</label>
+                    <input ng-model="user.title">
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Kategorie</label>
+                    <md-select ng-model="self.category">
+                        <md-option ng-repeat="category in self.categories" value="{{category.id}}">
+                            {{category.name}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-chips ng-model="self.characteristics" md-autocomplete-snap
+                          md-transform-chip="self.mapCharacteristic($chip)"
+                          md-require-match="true">
+                    <md-autocomplete
+                            md-selected-item="self.characteristic"
+                            md-search-text="self.characteristicSearch"
+                            md-items="item in self.findCharacteristic(self.characteristicSearch)"
+                            md-item-text="item"
+                            placeholder="Merkmale Hinzugfügen">
+                        <span md-highlight-text="self.characteristicSearch">{{item.name}}</span>
+                    </md-autocomplete>
+                    <md-chip-template>
+                            <span>
+                              <strong>{{$chip.name}}</strong>
+                            </span>
+                    </md-chip-template>
+                </md-chips>
+
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <div flex layout layout-align="start center">
+                <md-button ng-click="self.cancel()">
+                    <md-icon>close</md-icon>
+                </md-button>
+            </div>
+            <div flex layout layout-align="end center">
+                <md-button ng-click="self.ok()">
+                    <md-icon>check</md-icon>
+                </md-button>
+            </div>
+
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -16,10 +16,10 @@ import main from 'app/main'
 
 // Load loggers for injection and pre-angular debugging
 
-import { LogDecorator, ExternalLogger } from 'utils/LogDecorator';
+import { LogDecorator, ExternalLogger } from 'utils/LogDecorator'
 
-import HomeController from 'src/home/HomeController';
-import SchubladeController from 'src/schublade/SchubladeController';
+import ApplicationRouter from 'src/router'
+import CreateAngularContext from 'src/di'
 
 /**
  * Manually bootstrap the application when AngularJS and
@@ -39,23 +39,8 @@ angular
         let app = angular
             .module(appName, [material, main, 'ui.router'])
             .config(['$provide', LogDecorator])
-            .config(['$stateProvider','$urlRouterProvider', ($stateProvider,$urlRouterProvider) => {
-                $stateProvider
-                .state('home', {
-                    url: '/home',
-                    templateUrl: 'src/home/index.html',
-                    controller: HomeController,
-                    controllerAs: 'self'
-                })
-                .state('schublade', {
-                    url: '/schublade/:category',
-                    templateUrl: 'src/schublade/index.html',
-                    controller: SchubladeController,
-                    controllerAs: 'self'
-                })
-                $urlRouterProvider.otherwise('/home');
-            }]);
-
+            .config(['$stateProvider','$urlRouterProvider', ApplicationRouter]);
+        app = CreateAngularContext(app);
         angular.bootstrap(body, [app.name], {strictDi: false})
 
     });
