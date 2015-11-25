@@ -3,18 +3,18 @@ node_js:
   - "5.0.0"
 
 before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - npm start > /dev/null &
-  - npm run update-webdriver
-  - sleep 1 # give server time to start
+  #- export DISPLAY=:99.0
+  #- sh -e /etc/init.d/xvfb start
+  #- npm start > /dev/null &
+  #- npm run update-webdriver
+  #- sleep 1 # give server time to start
 
 install:
   - npm install
 
 script:
-  - node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
-  - node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
+  #- node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
+  #- node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
   - jspm config registries.github.remote https://github.jspm.io
   - jspm config registries.github.auth $GITHUB_API_KEY
   - jspm config registries.github.maxRepoSize 100
