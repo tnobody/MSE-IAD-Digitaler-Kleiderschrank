@@ -11,6 +11,7 @@ before_script:
 
 install:
   - npm install
+  - jspm config registries.github.auth 3cc68e8e6cccf09ff0009954fb902ff2e2f510c1
   - jspm install -y
 
 #script:
