@@ -11,7 +11,10 @@ before_script:
 
 install:
   - npm install
+  - jspm config registries.github.remote https://github.jspm.io
   - jspm config registries.github.auth 3cc68e8e6cccf09ff0009954fb902ff2e2f510c1
+  - jspm config registries.github.maxRepoSize 100
+  - jspm config registries.github.handler jspm-github
   - jspm install -y
 
 #script:
