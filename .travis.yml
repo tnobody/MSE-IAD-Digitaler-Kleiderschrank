@@ -13,8 +13,8 @@ install:
   - npm install
 
 script:
-  #- node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
-  #- node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
+  - node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
+  - node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
   - jspm config registries.github.remote https://github.jspm.io
   - jspm config registries.github.auth $GITHUB_API_KEY
   - jspm config registries.github.maxRepoSize 100
