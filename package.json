@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "description": "A starter project for AngularJS Material",
   "repository": "https://github.com/tnobody/MSE-IAD-Digitaler-Kleiderschrank",
+  "main": "server.js",
   "license": "MIT",
   "jspm": {
     "directories": {
@@ -39,6 +40,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "express": "^4.13.3",
     "jspm": "^0.16.15"
   }
 }
