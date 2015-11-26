@@ -1,9 +1,9 @@
 {
-  "name": "material-start",
+  "name": "digitaler-kleiderschrank",
   "private": true,
   "version": "0.0.1",
   "description": "A starter project for AngularJS Material",
-  "repository": "https://github.com/angular/material-start",
+  "repository": "https://github.com/tnobody/MSE-IAD-Digitaler-Kleiderschrank",
   "license": "MIT",
   "jspm": {
     "directories": {
