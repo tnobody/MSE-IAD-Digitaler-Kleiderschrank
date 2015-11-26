@@ -37,7 +37,7 @@
   "scripts": {
     "prestart": "npm update",
     "test": "node -e \"process.exit()\"",
-    "start": "node server.js"
+    "start": "jspm install && node server.js"
   },
   "dependencies": {
     "express": "^4.13.3",
