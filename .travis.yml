@@ -2,6 +2,10 @@ language: node_js
 node_js:
   - "5.0.0"
 
+env:
+  global:
+  - secure: "fwJrSL0emaIKUtKrS89oMn94bRKqR/YYGT18ycYp94Z88nryJdfBexuPRJpz8z+hyco3NgcgxEjT4Wz5skY0OTJcH4jwAqOXv22R4kpAwqUmBp+qcxahfbc01VANuYrsRG5hS6InkfuqeInaEmmUwn1I7Ht8zU+lP+oSzBVyKGyZfWNbq8SJu2Tr60HgocO46Ui0jLyu3F3NVIzBvm8V+MhXFZFA/Ay3rHu9+t28ruhIrhGoIUUI9YYvFy2JkU+K4+ckARg3bG/UPTb0mEs0vO+UM/rTwgjYOH0tioAuwY/BI1OYQqlKAcgI+HDWw/syEdUtTT8nw4MkGNjznhNNCQC8zEgmKflvsrhY5qB652dQ5nuVBM/dzNzersSc5NXb8V2td7z9A0zlJ2XFze066i73QYPrXLEGj62guq8PND6PFrtuvZG5hAMtl1UmQe/RXPhRBGqnOCrp2P5fGOqjD5eWgVU+FPladlOEkimen35iTDRwrSkh3FesYd2i8j4V0Tz3yry9VHXTdwcg9MAbqFyqMah2X5ptroYZmqFh/zl/kRY+AcKfDJ3QdLqoWK10M/nBJ/iE/MGPItA2wRO8cuD8ew4eRtvQLoyFvSivYv3SFd8nZMvKhRhY9XjlXXEEEUcZnXMSGcBtDxiIK24ldXxWRtlafRZJ2Z0p3E+eeHU="
+
 before_script:
   #- export DISPLAY=:99.0
   #- sh -e /etc/init.d/xvfb start
@@ -9,17 +13,17 @@ before_script:
   #- npm run update-webdriver
   #- sleep 1 # give server time to start
 
+before_install:
+  - npm install jspm -g
+  - jspm config registries.github.auth $JSPM_GITHUB_AUTH_TOKEN
+
 install:
   - npm install
+  - jspm install -y
 
 script:
   #- node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
   #- node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
-  - jspm config registries.github.remote https://github.jspm.io
-  - jspm config registries.github.auth $GITHUB_API_KEY
-  - jspm config registries.github.maxRepoSize 100
-  - jspm config registries.github.handler jspm-github
-  - jspm install -y
 
 deploy:
   provider: heruko
