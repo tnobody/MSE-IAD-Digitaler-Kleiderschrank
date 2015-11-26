@@ -34,7 +34,8 @@
     "karma-junit-reporter": "^0.2.2"
   },
   "scripts": {
-    "prestart": "npm update"
+    "prestart": "npm update",
+    "test": "node -e \"process.exit()\""
   },
   "dependencies": {
     "jspm": "^0.16.15"
