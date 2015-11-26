@@ -35,7 +35,8 @@
   },
   "scripts": {
     "prestart": "npm update",
-    "test": "node -e \"process.exit()\""
+    "test": "node -e \"process.exit()\"",
+    "start": "node server.js"
   },
   "dependencies": {
     "jspm": "^0.16.15"
