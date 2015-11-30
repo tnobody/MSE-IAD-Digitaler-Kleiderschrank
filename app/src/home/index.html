@@ -1,23 +1,16 @@
 <!--<div layout="row" ng-repeat="category in self.categories">-->
 <!--<a ng-href="#/schublade/{{category.name}}">{{category.name}}</a>-->
 <!--</div>-->
-<md-content layout="row" layout-wrap>
-    <md-card flex="{{category.flex}}" ng-repeat="category in self.categories">
-        <div>
-            <img ng-src="http://lorempixel.com/400/200/fashion/{{($index+5)}}" class="md-card-image"/>
-        </div>
-        <div layout="row">
-            <md-card-content layout="row" flex layout-align="start center">
-                <md-button ng-click="self.showClothingFormModal()" class="md-fab md-mini pull-right">
-                    <md-icon>add</md-icon>
-                </md-button>
-                <h2>{{category.name}}</h2>
-            </md-card-content>
-            <md-card-content layout="row" flex layout-align="end center">
-                <md-button ng-href="#/schublade/{{category.name}}">&Ouml;ffnen
-                    <md-icon>play_arrow</md-icon>
-                </md-button>
-            </md-card-content>
-        </div>
-    </md-card>
+<md-content layout="column">
+    <div layout-gt-sm="row" layout-sm="column">
+        <div ng-include="'src/home/card.html'" flex ng-init="i = 0"></div>
+        <div ng-include="'src/home/card.html'" flex ng-init="i = 1"></div>
+    </div>
+    <div layout="column">
+        <div ng-include="'src/home/card.html'" flex ng-init="i = 2"></div>
+    </div>
+    <div layout-gt-sm="row" layout-sm="column">
+        <div ng-include="'src/home/card.html'" flex ng-init="i = 3"></div>
+        <div ng-include="'src/home/card.html'" flex ng-init="i = 4"></div>
+    </div>
 </md-content>

@@ -1,7 +1,8 @@
 import ClothingFormController from 'src/clothing/ClothingFormController'
 import angular from 'angular';
-
+ClothingFormController.$inject = ['$mdDialog'];
 export default function ClothingFormModal($mdDialog) {
+
     return {
         show: () => {
             return $mdDialog.show({

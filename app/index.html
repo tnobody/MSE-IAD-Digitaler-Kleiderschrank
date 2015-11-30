@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <title>Angular Material - Starter App</title>
+    <title>Digitaler Kleiderschrank</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
 
@@ -25,10 +25,19 @@
 
 <body ng-cloak layout="row">
 
-<div layout="column" flex-offset="25" flex-offset-md="33" flex-offset-sm="0" flex-md="66" flex="50" flex-sm="100">
-    <header>
+<div layout="column"
+     flex-gt-xs="90"
+     flex-offset-gt-xs="5"
+     flex-gt-sm="80"
+     flex-offset-gt-sm="10"
+     flex-gt-md="70"
+     flex-offset-gt-md="15"
+     flex-gt-lg="60"
+     flex-offset-gt-lg="30"
+     flex="100">
+    <header class="">
         <a ui-sref="home">
-            <h1 class="md-display-3">
+            <h1 >
                 Digitaler Kleiderschrank
             </h1>
         </a>
