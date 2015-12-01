@@ -14,7 +14,7 @@ npm install -g live-server
 ## Develop
 
 ```
-cd src
+cd app
 live-server
 ```
 
