@@ -1,16 +1,16 @@
 <md-card>
-    <div>
-        <img ng-src="http://lorempixel.com/400/200/fashion/{{($index+5)}}" class="md-card-image"/>
+    <div layout="row" style="height: 150px" layout-align="space-around center">
+        <img flex data-ng-repeat="image in category.images" ng-src="{{image}}" style="max-height: 150px" class="md-card-image"/>
     </div>
     <div layout="row">
-        <md-card-content layout="row" flex layout-align="start center">
-            <md-button ng-click="self.showClothingFormModal()" class="md-fab md-mini pull-right">
+        <md-card-content layout="row" flex="75" layout-align="start center">
+            <md-button ng-click="showClothingFormModal($event)" class="md-fab md-mini pull-right">
                 <md-icon>add</md-icon>
             </md-button>
-            <h2>{{self.categories[i].name}}</h2>
+            <h3>{{category.name}}</h3>
         </md-card-content>
-        <md-card-content layout="row" flex layout-align="end center">
-            <md-button ng-href="#/schublade/{{category.name}}"><span class="hide-xs">&Ouml;ffnen</span>
+        <md-card-content layout="row" flex="25" layout-align="end center">
+            <md-button ng-href="#/schublade/{{category.name}}"><span class="hide-sm">&Ouml;ffnen</span>
                 <md-icon>play_arrow</md-icon>
             </md-button>
         </md-card-content>

@@ -8,7 +8,7 @@
     <title>Digitaler Kleiderschrank</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
-
+    <link rel='stylesheet' href="assets/app.css">
     <style type="text/css">
         /**
          * Hide when Angular is not yet loaded and initialized
@@ -25,7 +25,8 @@
 
 <body ng-cloak layout="row">
 
-<div layout="column"
+<div id="main"
+     layout="column"
      flex-gt-xs="90"
      flex-offset-gt-xs="5"
      flex-gt-sm="80"
@@ -33,16 +34,16 @@
      flex-gt-md="70"
      flex-offset-gt-md="15"
      flex-gt-lg="60"
-     flex-offset-gt-lg="30"
+     flex-offset-gt-lg="20"
      flex="100">
-    <header class="">
+    <header layout="column" layout-align="center center">
         <a ui-sref="home">
-            <h1 >
+            <h1 class="md-display-2">
                 Digitaler Kleiderschrank
             </h1>
         </a>
     </header>
-    <nav>
+    <nav layout="column" layout-align="center center">
         <md-button class="md-raised md-primary">Outfit vorschlagen</md-button>
     </nav>
     <main ui-view></main>

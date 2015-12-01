@@ -1,10 +1,13 @@
-<md-dialog aria-label="Mango (Fruit)" ng-cloak>
+<md-dialog aria-label="Add" ng-cloak flex>
     <form>
-        <md-dialog-content style="max-width:800px;max-height:810px; ">
+        <md-dialog-content>
             <div class="md-dialog-content" layout="column">
                 <md-input-container flex>
                     <label>Title</label>
-                    <input ng-model="user.title">
+                    <input ng-model="user.title" placeholder="Gib deinem Kleidugsstück einen Namen">
+                </md-input-container>
+                <md-input-container>
+                    <i class="material-icons">add_a_photo</i>
                 </md-input-container>
                 <md-input-container flex>
                     <label>Kategorie</label>

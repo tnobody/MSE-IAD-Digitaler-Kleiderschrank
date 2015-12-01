@@ -3,14 +3,14 @@
 <!--</div>-->
 <md-content layout="column">
     <div layout-gt-sm="row" layout-sm="column">
-        <div ng-include="'src/home/card.html'" flex ng-init="i = 0"></div>
-        <div ng-include="'src/home/card.html'" flex ng-init="i = 1"></div>
+        <schubladen-card category="self.categories[0]" flex></schubladen-card>
+        <schubladen-card category="self.categories[1]" flex></schubladen-card>
     </div>
     <div layout="column">
-        <div ng-include="'src/home/card.html'" flex ng-init="i = 2"></div>
+        <schubladen-card category="self.categories[2]" flex></schubladen-card>
     </div>
     <div layout-gt-sm="row" layout-sm="column">
-        <div ng-include="'src/home/card.html'" flex ng-init="i = 3"></div>
-        <div ng-include="'src/home/card.html'" flex ng-init="i = 4"></div>
+        <schubladen-card category="self.categories[3]" flex></schubladen-card>
+        <schubladen-card category="self.categories[4]" flex></schubladen-card>
     </div>
 </md-content>
