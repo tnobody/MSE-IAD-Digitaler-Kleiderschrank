@@ -6,13 +6,16 @@
                     <label>Title</label>
                     <input ng-model="user.title" placeholder="Gib deinem Kleidugsstück einen Namen">
                 </md-input-container>
-                <md-input-container>
-                    <i class="material-icons">add_a_photo</i>
+                <md-input-container layout="row" layout-align="start center">
+                    <img height="200px" ng-src="assets/amazon/Oberbekleidung/T-Shirt1.jpg"/>
+                    <div style="height: 200px;width: 200px" layout="row" layout-align="center center">
+                        <i class="material-icons" style="height: 50px;font-size: 50px">add_a_photo</i>
+                    </div>
                 </md-input-container>
                 <md-input-container flex>
                     <label>Kategorie</label>
                     <md-select ng-model="self.category">
-                        <md-option ng-repeat="category in self.categories" value="{{category.id}}">
+                        <md-option ng-repeat="category in self.categories" value="{{category}}">
                             {{category.name}}
                         </md-option>
                     </md-select>
@@ -25,7 +28,7 @@
                             md-selected-item="self.characteristic"
                             md-search-text="self.characteristicSearch"
                             md-items="item in self.findCharacteristic(self.characteristicSearch)"
-                            md-item-text="item"
+                            md-item-text="item.name"
                             placeholder="Merkmale Hinzugfügen">
                         <span md-highlight-text="self.characteristicSearch">{{item.name}}</span>
                     </md-autocomplete>
@@ -35,6 +38,32 @@
                             </span>
                     </md-chip-template>
                 </md-chips>
+                <md-input-container flex>
+                    <label>Weitere Farben</label>
+                    <md-select ng-model="self.color">
+                        <md-option ng-repeat="color in self.colors">
+                            {{color.name}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-chips ng-model="self.additionalColors" md-autocomplete-snap
+                          md-transform-chip="self.mapColor($chip)"
+                          md-require-match="true">
+                    <md-autocomplete
+                            md-selected-item="self.additionalColor"
+                            md-search-text="self.additionalColorSearch"
+                            md-items="color in self.findColors(self.additionalColorSearch)"
+                            md-item-text="color.name"
+                            placeholder="Weitere Farben">
+                        <span md-highlight-text="self.additionalColorSearch" ng-style="{'color':color.color}">{{color.name}}</span>
+                    </md-autocomplete>
+                    <md-chip-template>
+                            <span ng-style="{'color':$chip.color}">
+                              <strong>{{$chip.name}}</strong>
+                            </span>
+                    </md-chip-template>
+                </md-chips>
+
 
             </div>
         </md-dialog-content>
