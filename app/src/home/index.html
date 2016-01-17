@@ -2,6 +2,13 @@
 <!--<a ng-href="#/schublade/{{category.name}}">{{category.name}}</a>-->
 <!--</div>-->
 <md-content layout="column">
+
+    <md-input-container class="md-icon-float md-icon-right md-block" style="margin-bottom: 0px;">
+        <md-icon md-svg-src="assets/svg/ic_search_black_24px.svg"></md-icon>
+        <input type="text" ng-model="search" required placeholder="Jetzt nach deinem Lieblingsteil suchen...">
+        <md-icon md-svg-src="assets/svg/ic_filter_list_black_24px.svg"></md-icon>
+    </md-input-container>
+
     <div layout-gt-sm="row" layout-sm="column">
         <schubladen-card category="self.categories[0]" flex></schubladen-card>
         <schubladen-card category="self.categories[1]" flex></schubladen-card>
