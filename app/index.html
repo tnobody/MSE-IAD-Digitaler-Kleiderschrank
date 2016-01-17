@@ -8,6 +8,7 @@
     <title>Digitaler Kleiderschrank</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel='stylesheet' href="assets/app.css">
     <style type="text/css">
         /**
@@ -44,7 +45,7 @@
         </a>
     </header>
     <nav layout="column" layout-align="center center">
-        <md-button class="md-raised md-primary">Outfit vorschlagen</md-button>
+        <md-button class="md-raised md-primary" ng-click="showRecommandationModal($event)">Outfit vorschlagen</md-button>
     </nav>
     <main ui-view></main>
 </div>

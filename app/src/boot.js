@@ -39,7 +39,12 @@ angular
         let app = angular
             .module(appName, [material, main, 'ui.router'])
             .config(['$provide', LogDecorator])
-            .config(['$stateProvider','$urlRouterProvider', ApplicationRouter]);
+            .config(['$stateProvider','$urlRouterProvider', ApplicationRouter])
+            .run(['$rootScope','RecommandationFormModal',($rootScope,recommandationFormModal) => {
+                    $rootScope.showRecommandationModal = ($e) => {
+                        recommandationFormModal.show($e);
+                    }
+            }]);
         app = CreateAngularContext(app);
         angular.bootstrap(body, [app.name], {strictDi: false})
 

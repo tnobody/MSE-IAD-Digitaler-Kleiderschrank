@@ -1,0 +1,90 @@
+<style>
+    #share-buttons .fa {
+        margin-right:10px;
+    }
+</style>
+<md-dialog aria-label="Add" ng-cloak flex>
+    <form>
+        <md-dialog-content>
+            <div layout layout-align="center center">
+                <h2>Vorschlag für dein heutiges Outfit</h2>
+            </div>
+            <div layout layout-align="center center" id="recommandation">
+                <div flex="20"></div>
+                <div flex="60" layout="column" layout-align="center center">
+                    <div layout="row" layout-align="center center">
+                        <md-icon>chevron_left</md-icon>
+                        <img ng-src="assets/amazon/Kopfbedeckung/Haube1.jpg" style="max-height: 100px;"/>
+                        <md-icon>chevron_right</md-icon>
+                    </div>
+                    <div layout="row">
+                        <div layout="row" layout-align="center center">
+                            <md-icon>chevron_left</md-icon>
+                            <img ng-src="assets/amazon/Oberbekleidung/hemd.jpg" style="max-height: 150px;"/>
+                            <md-icon>chevron_right</md-icon>
+                        </div>
+                        <div layout="row" layout-align="center center">
+                            <md-icon>chevron_left</md-icon>
+                            <img ng-src="assets/amazon/Oberbekleidung/mantel.jpg" style="max-height: 150px;"/>
+                            <md-icon>chevron_right</md-icon>
+                        </div>
+                    </div>
+                    <div layout="row" layout-align="center center">
+                        <md-icon>chevron_left</md-icon>
+                        <img ng-src="assets/amazon/Hosen/Hose4.jpg" style="max-height: 150px;"/>
+                        <md-icon>chevron_right</md-icon>
+                    </div>
+                    <div layout="row" layout-align="center center">
+                        <md-icon>chevron_left</md-icon>
+                        <img ng-src="assets/amazon/Schuhe/Schuhe2.jpg" style="max-height: 100px;"/>
+                        <md-icon>chevron_right</md-icon>
+                    </div>
+                </div>
+                <div flex="20" layout="column" layout-align="center stretch">
+                    <div flex="100" layout="column" layout-align="center center">
+                        <h3>Optional:</h3>
+                        <div layout="row" layout-align="center center">
+                            <md-icon>chevron_left</md-icon>
+                            <img ng-src="assets/amazon/Accessoires/Accessoires2.jpg" style="max-height: 100px;"/>
+                            <md-icon>chevron_right</md-icon>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div flex="100" layout="column" layout-align="center center">
+                        <h3>Teilen auf:</h3>
+                        <div flex="100" layout="row" layout-align="center center" id="share-buttons">
+                            <i class="fa fa-facebook-official fa-2x"></i>
+                            <i class="fa fa-instagram fa-2x"></i>
+                            <i class="fa fa-twitter-square fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <div flex layout layout-align="start center">
+                <md-button ng-click="self.cancel()">
+                    <md-icon>close</md-icon>
+                    Abbrechen
+                </md-button>
+            </div>
+            <div flex layout layout-align="center center">
+                <md-button class="md-raised md-warn">
+                    <md-icon>refresh</md-icon>
+                    Neuer Vorschlag
+                </md-button>
+            </div>
+            <div flex layout layout-align="end center">
+                <md-button ng-click="self.ok()">
+                    Fertig
+                    <md-icon>check</md-icon>
+                </md-button>
+            </div>
+
+        </md-dialog-actions>
+    </form>
+</md-dialog>
